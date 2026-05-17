@@ -9,6 +9,7 @@ Este projeto foi desenvolvido como parte de um desafio técnico para a vaga de *
 O objetivo é validar a qualidade de um fluxo de e-commerce no site Automation Exercise, garantindo cobertura funcional, comportamental e de integração entre UI e API.
 
 A estratégia de testes contempla:
+
 - Validação do fluxo completo de compra com registro durante checkout
 - Testes de API com validação de contrato (schema)
 - Cenários negativos e edge cases
@@ -37,7 +38,7 @@ cypress/
 │   │   ├── users.cy.js
 │   │
 │   ├── ui/
-│       ├── place-order.cy.js
+│   │   ├── place-order.cy.js
 │
 ├── fixtures/
 │
@@ -55,11 +56,15 @@ cypress/
 │   ├── api/
 │   ├── ui/
 │
+assets/
+├── bugs/
+├── execution/
+│
 cypress.config.js
 package.json
 package-lock.json
 README.md
-```
+
 
 ⚙️ 4. Instalação do Projeto
 
