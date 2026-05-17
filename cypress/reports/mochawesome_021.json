@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-05-16T00:11:00.128Z",
+    "end": "2026-05-16T00:11:04.078Z",
+    "duration": 3950,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "4d0894e6-226e-47da-8d7c-ba1a9c201ab2",
+      "title": "",
+      "fullFile": "cypress\\e2e\\api\\products.cy.js",
+      "file": "cypress\\e2e\\api\\products.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "baeef143-55ee-408b-8ba2-adc990dd006d",
+          "title": "Products API",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should get all products list",
+              "fullTitle": "Products API should get all products list",
+              "timedOut": null,
+              "duration": 3939,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const ajv = new _ajv.default();\nconst schema = {\n  type: 'object',\n  properties: {\n    products: {\n      type: 'array',\n      items: {\n        type: 'object',\n        properties: {\n          id: {\n            type: 'number'\n          },\n          name: {\n            type: 'string'\n          },\n          price: {\n            type: 'string'\n          },\n          brand: {\n            type: 'string'\n          }\n        },\n        required: ['id', 'name', 'price']\n      }\n    }\n  },\n  required: ['products']\n};\ncy.request({\n  method: 'GET',\n  url: 'https://automationexercise.com/api/productsList'\n}).then(response => {\n  expect(response.status).to.eq(200);\n  const body = JSON.parse(response.body);\n  const validate = ajv.compile(schema);\n  const valid = validate(body);\n  expect(valid).to.be.true;\n  cy.wait(3000);\n});",
+              "err": {},
+              "uuid": "5a3a67cd-5a59-4230-b7e0-e015b7ef29f5",
+              "parentUUID": "baeef143-55ee-408b-8ba2-adc990dd006d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "5a3a67cd-5a59-4230-b7e0-e015b7ef29f5"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3939,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

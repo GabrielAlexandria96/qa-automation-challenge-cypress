@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-05-15T23:23:38.742Z",
+    "end": "2026-05-15T23:24:00.583Z",
+    "duration": 21841,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "47639ff9-6d66-4171-ad61-14a4e451363d",
+      "title": "",
+      "fullFile": "cypress\\e2e\\ui\\place-order.cy.js",
+      "file": "cypress\\e2e\\ui\\place-order.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "2d059c98-4c86-4c74-b1b4-506ba9f22157",
+          "title": "Place Order",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should place order successfully",
+              "fullTitle": "Place Order should place order successfully",
+              "timedOut": null,
+              "duration": 21813,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const user = _signupPage.default.generateUser();\n_homePage.default.visit();\n_homePage.default.addFirstProductToCart();\n_homePage.default.continueShopping();\n_homePage.default.addSecondProductToCart();\n_cartPage.default.openCart();\n_cartPage.default.verifyProductsInCart();\n_cartPage.default.proceedToCheckout();\n_signupPage.default.signup(user);\n_signupPage.default.fillAccountInformation(user);\n_signupPage.default.verifyAccountCreated();\n_signupPage.default.continueAfterAccountCreation();\n_signupPage.default.verifyLoggedUser();\n_cartPage.default.openCart();\n_cartPage.default.proceedToCheckout();\n_paymentPage.default.openPlaceOrder();\n_paymentPage.default.fillPaymentAndPlaceOrder(user);\n_paymentPage.default.verifyOrderSuccess();",
+              "err": {},
+              "uuid": "6b69f0c7-3e1e-4e67-83cf-2bb01b392cb0",
+              "parentUUID": "2d059c98-4c86-4c74-b1b4-506ba9f22157",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "6b69f0c7-3e1e-4e67-83cf-2bb01b392cb0"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 21813,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

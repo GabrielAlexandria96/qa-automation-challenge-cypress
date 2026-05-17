@@ -1,0 +1,124 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-05-16T00:11:06.965Z",
+    "end": "2026-05-16T00:11:16.470Z",
+    "duration": 9505,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "2f5b9783-4e0f-47d7-b249-9359823077f0",
+      "title": "",
+      "fullFile": "cypress\\e2e\\api\\users.cy.js",
+      "file": "cypress\\e2e\\api\\users.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "a9f8ba27-11db-4ca3-8384-5789ec30fb0c",
+          "title": "User API",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should create user successfully",
+              "fullTitle": "User API should create user successfully",
+              "timedOut": null,
+              "duration": 5750,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const user = {\n  name: _faker.faker.person.fullName(),\n  email: _faker.faker.internet.email(),\n  password: _faker.faker.internet.password(),\n  title: 'Mr',\n  birth_date: '10',\n  birth_month: '5',\n  birth_year: '1998',\n  firstname: _faker.faker.person.firstName(),\n  lastname: _faker.faker.person.lastName(),\n  company: _faker.faker.company.name(),\n  address1: _faker.faker.location.streetAddress(),\n  address2: _faker.faker.location.secondaryAddress(),\n  country: 'Canada',\n  zipcode: _faker.faker.location.zipCode(),\n  state: _faker.faker.location.state(),\n  city: _faker.faker.location.city(),\n  mobile_number: _faker.faker.phone.number()\n};\ncy.request({\n  method: 'POST',\n  url: 'https://automationexercise.com/api/createAccount',\n  form: true,\n  body: user\n}).then(response => {\n  expect(response.status).to.eq(200);\n  const body = JSON.parse(response.body);\n  expect(body.responseCode).to.eq(201);\n  expect(body.message).to.eq('User created!');\n  cy.wait(5000);\n});",
+              "err": {},
+              "uuid": "e83692aa-4507-4243-852b-19aa0f99ee1d",
+              "parentUUID": "a9f8ba27-11db-4ca3-8384-5789ec30fb0c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should not create user with duplicated email",
+              "fullTitle": "User API should not create user with duplicated email",
+              "timedOut": null,
+              "duration": 3734,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const duplicatedUser = {\n  name: 'Gabriel',\n  email: 'teste@email.com',\n  password: '123456',\n  title: 'Mr',\n  birth_date: '10',\n  birth_month: '5',\n  birth_year: '1998',\n  firstname: 'Gabriel',\n  lastname: 'Alexandria',\n  company: 'QA',\n  address1: 'Street 1',\n  address2: 'Street 2',\n  country: 'Canada',\n  zipcode: '12345',\n  state: 'Bahia',\n  city: 'Salvador',\n  mobile_number: '71999999999'\n};\ncy.request({\n  method: 'POST',\n  url: 'https://automationexercise.com/api/createAccount',\n  failOnStatusCode: false,\n  form: true,\n  body: duplicatedUser\n}).then(response => {\n  expect(response.status).to.eq(200);\n  const body = JSON.parse(response.body);\n  expect(body.responseCode).to.eq(400);\n  expect(body.message).to.include('Email already exists');\n  cy.wait(3000);\n});",
+              "err": {},
+              "uuid": "dbb554d7-e997-4802-b4aa-cd67bf71fd96",
+              "parentUUID": "a9f8ba27-11db-4ca3-8384-5789ec30fb0c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "e83692aa-4507-4243-852b-19aa0f99ee1d",
+            "dbb554d7-e997-4802-b4aa-cd67bf71fd96"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 9484,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}
