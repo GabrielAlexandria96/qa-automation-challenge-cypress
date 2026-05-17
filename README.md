@@ -29,6 +29,7 @@ A estratégia de testes contempla:
 
 # 📂 3. Estrutura do Projeto
 
+```txt
 cypress/
 ├── e2e/
 │   ├── api/
@@ -47,9 +48,7 @@ cypress/
 │   ├── signupPage.js
 │
 ├── reports/
-│
 ├── schemas/
-│
 ├── support/
 │
 ├── videos/
@@ -60,6 +59,7 @@ cypress.config.js
 package.json
 package-lock.json
 README.md
+```
 
 ⚙️ 4. Instalação do Projeto
 
@@ -150,78 +150,119 @@ Validar se o sistema recalcula corretamente o valor final do pedido.
 
 # 🐞 10. Bug Reports
 
-🐛 Bug 1 - Duplo clique adiciona múltiplas unidades do mesmo produto
+---
 
-Título:
+# 🐛 Bug 1 — Produto duplicado ao clicar rapidamente em “Add to cart”
 
-Sistema permite adição duplicada de produto no carrinho ao clicar rapidamente no botão “Add to cart”
+## Título
+Sistema permite adição duplicada de produto no carrinho ao clicar rapidamente no botão “Add to cart”.
 
-Ambiente:
+---
 
-Site: Automation Exercise
-Navegador: Chrome (Desktop)
-Cenário: Adição de produtos ao carrinho
+## Ambiente
 
-Descrição
+- Site: Automation Exercise
+- Navegador: Chrome (Desktop)
+- Cenário: Adição de produtos ao carrinho
 
-Ao clicar rapidamente mais de uma vez no botão “Add to cart”, o sistema adiciona múltiplas unidades do mesmo produto ao carrinho, sem controle de debounce ou bloqueio de múltiplos eventos.
+---
 
-Passos para reproduzir
+## Descrição
 
-1. Acessar lista de produtos
+Ao clicar rapidamente múltiplas vezes no botão “Add to cart”, o sistema adiciona diversas unidades do mesmo produto ao carrinho sem qualquer controle de debounce, bloqueio de múltiplos eventos ou prevenção de requisições simultâneas.
+
+---
+
+## Passos para reproduzir
+
+1. Acessar a lista de produtos
 2. Selecionar qualquer produto
 3. Clicar rapidamente várias vezes em “Add to cart”
 4. Abrir o carrinho
 
-Resultado atual:
+---
 
-O produto é adicionado múltiplas vezes conforme o número de cliques realizados.
+## Resultado atual
 
-Resultado esperado:
+O sistema adiciona múltiplas unidades do mesmo produto proporcionalmente à quantidade de cliques realizados.
 
-Bloquear cliques duplicados durante requisição ativa, ou
-consolidar adição como 1 unidade por ação de clique
+---
 
-Severidade:
+## Resultado esperado
 
-Alta (Funcional / Negócio) — impacta diretamente o fluxo de compra e pode gerar inconsistência no pedido final
+O sistema deve:
 
-Evidência:
+- bloquear múltiplos cliques enquanto a requisição estiver em andamento
+OU
+- consolidar a ação como apenas 1 adição de produto por interação do usuário
 
-🐛 Bug 2 - Sobreposição de elementos no carrinho com múltiplos itens
+---
 
-Título:
+## Severidade
 
-Layout do carrinho quebra e causa sobreposição entre nome do produto e imagem ao adicionar múltiplos itens
+**Alta** — Impacta diretamente o fluxo de compra e pode gerar inconsistência no pedido final.
 
-Ambiente:
+---
 
-Site: Automation Exercise
-Navegador: Chrome (Desktop)
-Cenário: Adição de produtos ao carrinho
+## Evidência
 
-Descrição:
+![Bug 1](assets/bugs/bug1.gif)
 
-Ao adicionar vários produtos ao carrinho, ocorre quebra no layout da página, resultando na sobreposição do nome do produto com a imagem.
+---
 
-Passos para reproduzir: 
+---
+
+# 🐛 Bug 2 — Quebra de layout no carrinho com múltiplos produtos
+
+## Título
+
+Layout do carrinho quebra e causa sobreposição entre nome do produto e imagem ao adicionar múltiplos itens.
+
+---
+
+## Ambiente
+
+- Site: Automation Exercise
+- Navegador: Chrome (Desktop)
+- Cenário: Carrinho com múltiplos produtos
+
+---
+
+## Descrição
+
+Ao adicionar vários produtos ao carrinho, o layout da página apresenta problemas de responsividade e alinhamento, causando sobreposição entre elementos visuais como imagem e descrição do produto.
+
+---
+
+## Passos para reproduzir
 
 1. Adicionar 5 ou mais produtos ao carrinho
 2. Acessar o carrinho
-3. Observar a lista de produtos
+3. Observar a listagem de produtos
 
-Resultado atual:
-Texto dos produtos sobrepõe a imagem, comprometendo a legibilidade.
+---
 
-Resultado esperado:
+## Resultado atual
 
-Layout deve manter espaçamento adequado entre imagem e texto, sem sobreposição.
+Os textos dos produtos sobrepõem elementos da interface, comprometendo a legibilidade e experiência do usuário.
 
-Severidade: 
+---
 
-Média (UI/UX + Usabilidade) — pode dificultar leitura do carrinho e gerar erro na conferência do pedido
+## Resultado esperado
 
-Evidência:
+O layout deve manter espaçamento adequado entre todos os elementos da listagem, garantindo responsividade e legibilidade.
+
+---
+
+## Severidade
+
+**Média** — Impacta usabilidade, experiência do usuário e conferência correta dos itens do pedido.
+
+---
+
+## Evidência
+
+![Bug 2](assets/bugs/bug2.png)
 
 # 📊 11. Boas Práticas Aplicadas
 
