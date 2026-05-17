@@ -121,8 +121,9 @@ Etapas validadas:
 - Finalização da compra
 - Validação da mensagem "Order Placed!"
 
-# 8. BDD (Fluxo principal)
+# 🧾 8. BDD (Fluxo principal)
 
+```gherkin
 Feature: Finalização de compra durante checkout
 
 Scenario: Cliente realiza compra criando conta durante o processo
@@ -132,6 +133,7 @@ Scenario: Cliente realiza compra criando conta durante o processo
   And informar os dados de pagamento
   Then o pedido deve ser concluído com sucesso
   And o sistema deve exibir a confirmação da compra
+```
 
 # 🧠 9. Edge Cases (QA Thinking)
 
