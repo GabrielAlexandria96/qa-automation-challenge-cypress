@@ -1,6 +1,5 @@
 # 📌 QA Automation Challenge - Cypress
 
----
 
 # 📖 1. Visão do Projeto
 
@@ -16,7 +15,6 @@ A estratégia de testes contempla:
 - Identificação de falhas funcionais e de usabilidade
 - Automação escalável com boas práticas de QA
 
----
 
 # 🛠️ 2. Tecnologias Utilizadas
 
@@ -26,7 +24,6 @@ A estratégia de testes contempla:
 - AJV (validação de schema JSON)
 - Mochawesome (relatórios de execução)
 
----
 
 # 📂 3. Estrutura do Projeto
 
@@ -155,14 +152,10 @@ Validar se o sistema recalcula corretamente o valor final do pedido.
 
 # 🐞 10. Bug Reports
 
----
-
 # 🐛 Bug 1 — Produto duplicado ao clicar rapidamente em “Add to cart”
 
 ## Título
 Sistema permite adição duplicada de produto no carrinho ao clicar rapidamente no botão “Add to cart”.
-
----
 
 ## Ambiente
 
@@ -170,13 +163,9 @@ Sistema permite adição duplicada de produto no carrinho ao clicar rapidamente 
 - Navegador: Chrome (Desktop)
 - Cenário: Adição de produtos ao carrinho
 
----
-
 ## Descrição
 
 Ao clicar rapidamente múltiplas vezes no botão “Add to cart”, o sistema adiciona diversas unidades do mesmo produto ao carrinho sem qualquer controle de debounce, bloqueio de múltiplos eventos ou prevenção de requisições simultâneas.
-
----
 
 ## Passos para reproduzir
 
@@ -185,13 +174,9 @@ Ao clicar rapidamente múltiplas vezes no botão “Add to cart”, o sistema ad
 3. Clicar rapidamente várias vezes em “Add to cart”
 4. Abrir o carrinho
 
----
-
 ## Resultado atual
 
 O sistema adiciona múltiplas unidades do mesmo produto proporcionalmente à quantidade de cliques realizados.
-
----
 
 ## Resultado esperado
 
@@ -201,13 +186,9 @@ O sistema deve:
 OU
 - consolidar a ação como apenas 1 adição de produto por interação do usuário
 
----
-
 ## Severidade
 
 **Alta** — Impacta diretamente o fluxo de compra e pode gerar inconsistência no pedido final.
-
----
 
 ## Evidência
 
@@ -223,21 +204,15 @@ OU
 
 Layout do carrinho quebra e causa sobreposição entre nome do produto e imagem ao adicionar múltiplos itens.
 
----
-
 ## Ambiente
 
 - Site: Automation Exercise
 - Navegador: Chrome (Desktop)
 - Cenário: Carrinho com múltiplos produtos
 
----
-
 ## Descrição
 
 Ao adicionar vários produtos ao carrinho, o layout da página apresenta problemas de responsividade e alinhamento, causando sobreposição entre elementos visuais como imagem e descrição do produto.
-
----
 
 ## Passos para reproduzir
 
@@ -245,25 +220,17 @@ Ao adicionar vários produtos ao carrinho, o layout da página apresenta problem
 2. Acessar o carrinho
 3. Observar a listagem de produtos
 
----
-
 ## Resultado atual
 
 Os textos dos produtos sobrepõem elementos da interface, comprometendo a legibilidade e experiência do usuário.
-
----
 
 ## Resultado esperado
 
 O layout deve manter espaçamento adequado entre todos os elementos da listagem, garantindo responsividade e legibilidade.
 
----
-
 ## Severidade
 
 **Média** — Impacta usabilidade, experiência do usuário e conferência correta dos itens do pedido.
-
----
 
 ## Evidência
 
@@ -282,6 +249,7 @@ O layout deve manter espaçamento adequado entre todos os elementos da listagem,
 - Estrutura organizada para manutenção
 - Cenários focados em fluxo real de negócio
 - Identificação de edge cases relevantes
+
 
 # 🚀 12. Conclusão
 
