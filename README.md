@@ -192,7 +192,7 @@ OU
 
 ## Evidência
 
-![Bug 1](assets/bugs/bug1.gif)
+![Bug 1](assets/execution/bug1.gif)
 
 ---
 
